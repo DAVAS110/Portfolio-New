@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HTML from "../components/Tags/html.astro";
+import React from "../components/Tags/react.astro";
+import Tailwindcss from "../components/Tags/tailwindcss.astro";
+import Threejs from "../components/Tags/threeJS.astro";
+
+import Back from "../components/back.astro";
+---
+
+<Layout title="Enova">
+  <section
+    class="z-30 mx-auto mt-56 flex w-full max-w-[108rem] items-start justify-start text-white"
+  >
+    <div class="flex flex-col gap-9">
+      <Back />
+      <h2 class="font-RobotoSlabBold text-white text-6xl">Nexus</h2>
+      <div class="flex gap-4">
+        <React />
+        <Tailwindcss />
+        <HTML />
+        <Threejs />
+      </div>
+      <p class="font-RobotoSlabRegular text-white text-2xl">
+        This is an interactive website created for the F1 in Schools competition
+        in Costa Rica. It features 3D models of the car and team stand, built
+        using Three.js. The website provides an engaging experience by allowing
+        users to explore and interact with the models in a dynamic 3D
+      </p>
+    </div>
+  </section>
+</Layout>

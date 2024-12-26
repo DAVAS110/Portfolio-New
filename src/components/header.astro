@@ -1,0 +1,19 @@
+---
+import Github from "./Github-astro.astro";
+const Logo = "<Portfolio />";
+import { navData } from "../consts/data.ts";
+---
+
+<header
+  class="h-30 fixed z-[3] flex w-full items-center justify-center text-white"
+>
+  <nav
+    class="p-x-[1rem] p-y-[2rem] mx-auto flex h-auto min-h-[7rem] w-full max-w-[108rem] flex-wrap items-end justify-between bg-transparent"
+  >
+    <a href="/" class="font-serif text-xl"><span>{Logo}</span></a>
+    <Github
+      title={"Take a look at Github"}
+      href={"https://github.com/DAVAS110"}
+    />
+  </nav>
+</header>

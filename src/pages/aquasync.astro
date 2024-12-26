@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import API from "../components/Tags/API.astro";
+import HTML from "../components/Tags/HTML.astro";
+import React from "../components/Tags/React.astro";
+import Postman from "../components/Tags/Postman.astro";
+import Tailwindcss from "../components/Tags/Tailwindcss.astro";
+
+import Github from "../components/github-astro.astro";
+import Back from "../components/back.astro";
+---
+
+<Layout title="Enova">
+  <section
+    class="z-30 mx-auto mt-56 flex w-full max-w-[108rem] items-start justify-start text-white"
+  >
+    <div class="flex flex-col gap-9">
+      <Back />
+      <h2 class="font-RobotoSlabBold text-white text-6xl">Aqua Sync</h2>
+      <div class="flex gap-4">
+        <React />
+        <Tailwindcss />
+        <HTML />
+        <Postman />
+        <API />
+      </div>
+      <p class="font-RobotoSlabRegular text-white text-2xl">
+        Eaton Website is a solution that enables the connection of the Eaton
+        Easy E4 device with a website through the Eaton PLC API. It facilitates
+        the integration and remote control of the Eaton Easy E4 to efficiently
+        monitor and manage processes.
+      </p>
+      <p class="font-RobotoSlabRegular text-white text-2xl">
+        Displays in real-time the status of the digital or analog inputs and
+        outputs of the Eaton PLC. It is adapted for a specific functionality,
+        but the foundational principles remain the same (Works only in a local
+        environment).
+      </p>
+      <p class="font-RobotoSlabRegular italic text-white text-xl">
+        It is based on a fully customizable competition project.
+      </p>
+      <Github
+        title="View Repository"
+        href="https://github.com/DAVAS110/AquaSync"
+      />
+    </div>
+  </section>
+</Layout>
