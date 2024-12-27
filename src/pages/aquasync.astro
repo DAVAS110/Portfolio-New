@@ -1,16 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import API from "../components/Tags/API.astro";
-import HTML from "../components/Tags/HTML.astro";
-import React from "../components/Tags/React.astro";
-import Postman from "../components/Tags/Postman.astro";
-import Tailwindcss from "../components/Tags/Tailwindcss.astro";
 
+import Tags from "../components/Tags/Tags.astro";
+import { aquaSyncData } from "../data/aquaSyncData";
 import Github from "../components/github-astro.astro";
 import Back from "../components/back.astro";
 ---
 
-<Layout title="Enova">
+<Layout title="AquaSync">
   <section
     class="z-30 mx-auto mt-56 flex w-full max-w-[108rem] items-start justify-start text-white"
   >
@@ -18,11 +15,14 @@ import Back from "../components/back.astro";
       <Back />
       <h2 class="font-RobotoSlabBold text-white text-6xl">Aqua Sync</h2>
       <div class="flex gap-4">
-        <React />
-        <Tailwindcss />
-        <HTML />
-        <Postman />
-        <API />
+        {aquaSyncData.map(({ name, svg, bgColor, textColor }) => (
+          <Tags
+                name={name}
+                svg={svg}
+                bgColor={bgColor}
+                textColor={textColor}
+          />
+        ))}
       </div>
       <p class="font-RobotoSlabRegular text-white text-2xl">
         Eaton Website is a solution that enables the connection of the Eaton

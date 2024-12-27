@@ -1,14 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HTML from "../components/Tags/html.astro";
-import React from "../components/Tags/react.astro";
-import Tailwindcss from "../components/Tags/tailwindcss.astro";
-import Threejs from "../components/Tags/threeJS.astro";
 
 import Back from "../components/back.astro";
+import Tags from "../components/Tags/Tags.astro";
+import Github from "../components/github-astro.astro";
+
+import { nexusData } from "../data/nexusData.ts";
 ---
 
-<Layout title="Enova">
+<Layout title="Nexus">
   <section
     class="z-30 mx-auto mt-56 flex w-full max-w-[108rem] items-start justify-start text-white"
   >
@@ -16,10 +16,16 @@ import Back from "../components/back.astro";
       <Back />
       <h2 class="font-RobotoSlabBold text-white text-6xl">Nexus</h2>
       <div class="flex gap-4">
-        <React />
-        <Tailwindcss />
-        <HTML />
-        <Threejs />
+        {
+          nexusData.map(({ name, svg, bgColor, textColor }) => (
+            <Tags
+              name={name}
+              svg={svg}
+              bgColor={bgColor}
+              textColor={textColor}
+            />
+          ))
+        }
       </div>
       <p class="font-RobotoSlabRegular text-white text-2xl">
         This is an interactive website created for the F1 in Schools competition
@@ -27,6 +33,10 @@ import Back from "../components/back.astro";
         using Three.js. The website provides an engaging experience by allowing
         users to explore and interact with the models in a dynamic 3D
       </p>
+      <Github
+        title="View Repository"
+        href="https://github.com/DAVAS110/Nexus"
+      />
     </div>
   </section>
 </Layout>

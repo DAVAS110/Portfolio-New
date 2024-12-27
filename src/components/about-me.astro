@@ -1,19 +1,9 @@
 ---
 import profile from "../img/aboutme/about-me-profile.webp";
 
-import Html from "../components/Tags/html.astro";
-import A360 from "../components/Tags/a360.astro";
-import Figma from "../components/Tags/figma.astro";
-import React from "../components/Tags/react.astro";
-import Python from "../components/Tags/python.astro";
-import Postman from "../components/Tags/postman.astro";
 import Tags from "../components/Tags/Tags.astro";
-import AstroTag from "../components/Tags/astroTag.astro";
-import ReactNative from "../components/Tags/reactNative.astro";
-import Tailwindcss from "../components/Tags/tailwindcss.astro";
-import Javascript from "../components/Tags/javascript.astro";
 
-import {aboutMeTechData} from '../consts/data.ts'
+import { aboutMeTechData } from "../data/aboutMeTechData.ts";
 ---
 
 <section
@@ -34,19 +24,21 @@ import {aboutMeTechData} from '../consts/data.ts'
     >
       Hi, I'm David! 👋
     </p>
-    <div class="flex flex-wrap justify-center items-center gap-3 text-white">
-      {aboutMeTechData.map(({name, svg, bgColor, textColor}) => (
-        <Tags name={name} svg={svg} bgColor={bgColor} textColor={textColor} />
-      ))}
+    <div class="flex flex-wrap items-center justify-center gap-3 text-white">
+      {
+        aboutMeTechData.map(({ name, svg, bgColor, textColor }) => (
+          <Tags name={name} svg={svg} bgColor={bgColor} textColor={textColor} />
+        ))
+      }
     </div>
     <p
       class="text-center font-light tracking-wide text-white text-xs md:text-2xl"
     >
-      I am passionate about learning, technology, and the world of software
-      development and electronics. I specialize in developing applications (both
-      web and mobile). As an electronics technician, I also work on IoT
-      projects. I always enjoy tackling new challenges and learning cutting-edge
-      technologies to continuously improve my skills.
+      Passionate about learning, technology, and the world of software
+      development and electronics. I develop web and mobile applications. As a
+      student of electronics, I work on IoT projects, industrial control, and
+      electronics projects. I always enjoy taking on new projects and learning
+      new technologies to enhance my skills.
     </p>
   </div>
 </section>

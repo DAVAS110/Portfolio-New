@@ -1,12 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import API from "../components/Tags/api.astro";
-import Postman from "../components/Tags/postman.astro";
-import ReactNative from "../components/Tags/reactNative.astro";
-import GoogleClould from "../components/Tags/googleClould.astro";
 
+import { enovaData } from "../data/enovaData.ts";
 import Github from "../components/github-astro.astro";
 import Back from "../components/back.astro";
+import Tags from '../components/Tags/Tags.astro';
 ---
 
 <Layout title="Enova">
@@ -17,10 +15,14 @@ import Back from "../components/back.astro";
       <Back />
       <h2 class="font-RobotoSlabBold text-white text-6xl">Enova</h2>
       <div class="flex gap-4">
-        <ReactNative />
-        <Postman />
-        <GoogleClould />
-        <API />
+        {enovaData.map(({ name, svg, bgColor, textColor, index }) => (
+          <Tags
+                name={name}
+                svg={svg}
+                bgColor={bgColor}
+                textColor={textColor}
+              />
+        ))}
       </div>
       <p class="font-RobotoSlabRegular text-white text-2xl">
         Enova is a mobile application developed with React Native, aimed at

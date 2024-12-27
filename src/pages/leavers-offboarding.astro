@@ -1,9 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import A360 from "../components/Tags/A360.astro";
-import Postman from "../components/Tags/Postman.astro";
-import API from "../components/Tags/API.astro";
-import Servicenow from "../components/Tags/servicenow.astro";
+import Tags from "../components/Tags/Tags.astro";
+import { leaversOffboardingData }  from "../data/leaversOffboardingData.ts";
 
 import Back from "../components/back.astro";
 ---
@@ -18,10 +16,18 @@ import Back from "../components/back.astro";
         Leavers Offboarding
       </h2>
       <div class="flex gap-4">
-        <Postman />
-        <Servicenow />
-        <A360 />
-        <API />
+        {
+          leaversOffboardingData.map(
+            ({ name, svg, bgColor, textColor, index }) => (
+              <Tags
+                name={name}
+                svg={svg}
+                bgColor={bgColor}
+                textColor={textColor}
+              />
+            )
+          )
+        }
       </div>
       <p class="font-RobotoSlabRegular text-white text-2xl">
         I worked as an IA and RPA Developer. During this time, I used tools such

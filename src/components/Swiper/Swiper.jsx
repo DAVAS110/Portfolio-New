@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css";
 
-import { projectsData } from "../../consts/data.ts";
+import { projectsData } from "../../data/projectsData.ts";
 
 const SwiperComponent = () => {
   return (

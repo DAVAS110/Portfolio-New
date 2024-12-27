@@ -25,8 +25,8 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body class="z-10 flex flex-col text-base">
-    <Starfield client:visible />
+    <Starfield />
     <Header />
-     <slot />
+    <slot />
   </body>
 </html>
